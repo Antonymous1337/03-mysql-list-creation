@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:Antonymous1337/03-mysql-list-creation.git
+    repoURL: https://github.com/Antonymous1337/03-mysql-list-creation.git
     targetRevision: HEAD
     path: ./dev
   destination:
