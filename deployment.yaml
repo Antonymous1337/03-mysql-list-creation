@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metadata-name-nginx
+  namespace: my-app-ns
+  labels:
+    app: metadata-label-app-nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: this-label-needs-to-match-nginx
+  template:
+    metadata:
+      labels:
+        app: this-label-needs-to-match-nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.14.2
+          ports:
+          - containerPort: 80
