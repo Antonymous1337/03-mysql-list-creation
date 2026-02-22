@@ -22,4 +22,4 @@ spec:
         - name: PMA_HOST
           value: mysql-service
         - name: PMA_PORT
-          value: 3306
+          value: "3306"
