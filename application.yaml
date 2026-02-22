@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapp-argo-application
+  name: my-application-name
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/Antonymous1337/03-mysql-list-creation.git
+    repoURL: https://github.com/Antonymous1337/03-mysql-list-creation
     targetRevision: HEAD
     path: ./k8s
   destination:
     server: https://kubernetes.default.svc
-    namespace: my-app-ns
+    namespace: my-namespace
   syncPolicy:
     syncOptions:
     - CreateNamespace=true

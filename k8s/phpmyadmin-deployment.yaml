@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: phpmyadmin-deployment
-  namespace: my-app-ns
+  namespace: my-namespace
 spec:
   replicas: 1
   selector:
@@ -14,7 +14,7 @@ spec:
         app: phpmyadmin
     spec:
       containers:
-      - name: phpmyadmin
+      - name: phpmyadmin-container-name
         image: phpmyadmin/phpmyadmin
         ports:
         - containerPort: 80
@@ -22,4 +22,4 @@ spec:
         - name: PMA_HOST
           value: mysql-service
         - name: PMA_PORT
-          value: "3306"
+          value: 3306

@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql-deployment
-  namespace: my-app-ns
+  namespace: my-namespace
 spec:
   replicas: 1
   selector:
@@ -14,7 +14,7 @@ spec:
         app: mysql
     spec:
       containers:
-      - name: mysql
+      - name: mysql-container-name
         image: mysql:8.0
         ports:
         - containerPort: 3306
@@ -25,8 +25,8 @@ spec:
               name: mysql-secret
               key: MYSQL_ROOT_PASSWORD
         volumeMounts:
-        - name: mysql-storage
-          mountPath: /var/lib/mysql
+        - name: mysql-volume
+          path: /var/lib/mysql
       volumes:
-      - name: mysql-storage
+      - name: mysql-volume
         emptyDir: {}
