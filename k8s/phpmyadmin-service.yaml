@@ -4,7 +4,7 @@ metadata:
   name: phpmyadmin-service
   namespace: my-namespace
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: phpmyadmin
   ports:
