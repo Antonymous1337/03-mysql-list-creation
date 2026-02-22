@@ -1,0 +1,6 @@
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: service-nginx
+  namespace: my-app-ns
+spec:
