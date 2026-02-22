@@ -4,3 +4,5 @@ metadata:
   name: service-nginx
   namespace: my-app-ns
 spec:
+  selector:
+    app: this-label-needs-to-match-nginx
