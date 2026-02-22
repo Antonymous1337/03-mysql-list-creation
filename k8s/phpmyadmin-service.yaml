@@ -4,10 +4,9 @@ metadata:
   name: phpmyadmin-service
   namespace: my-app-ns
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: phpmyadmin
   ports:
   - port: 80
     targetPort: 80
-    nodePort: 30007
