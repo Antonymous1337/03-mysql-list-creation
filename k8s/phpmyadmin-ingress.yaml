@@ -1,0 +1,40 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: phpmyadmin-ingress
+spec:
+  rules:
+  # Have to add this to /etc/hosts to direct traffic in browser to this ingress
+  - host: phpmyadmin.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: phpmyadmin-service
+            port:
+              number: 80
+
+# TONIGHT
+# Deploy the template react application frontend in kubernetes, and make a backend call that updates db
+
+# Monday NIGHT
+# External Secrets Operator
+
+# Wednesday NIGHT
+# Grafana w/ the 1 basic call
+
+# Thursday NIGHT
+# Splunk w/ the 1 basic call
+
+# Friday NIGHT
+# Create Basic CRUD frontend w/ at minimum backend db 4 endpoints and w/ grafana and splunk graphs
+
+# Saturday NIGHT
+# Rewrite everything from scratch
+
+# Sunday NIGHT
+# PodDisruptionBudget
+# HorizontalPodAUtoScaler
+# k6s
