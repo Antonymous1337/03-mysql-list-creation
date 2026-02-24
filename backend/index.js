@@ -10,6 +10,7 @@ const connection = mysql.createConnection({
     host: "mysql-service",
     user: "root",
     password: "rootpassword",
+    database: "appdb"
 })
 
 connection.connect(err => {
@@ -23,10 +24,16 @@ connection.connect(err => {
 // create table if not exists
 connection.query(`
     CREATE TABLE IF NOT EXISTS todos (
-        id INT AUTO_INCREMENT PRIMARY KEY
+        id INT AUTO_INCREMENT PRIMARY KEY,
         title VARCHAR(255)
-    )    
-`);
+    );
+`, (err) => {
+    if (err) {
+        console.error("Error creating todos table:", err);
+        return;
+    }
+    console.log("Todos table ensured");
+});
 
 app.post("/add", (req, res) => {
     const { todoListTitle } = req.body;
