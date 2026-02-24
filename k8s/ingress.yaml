@@ -1,7 +1,11 @@
+# minikube addons enable ingress
+# need to add <minikube ip> <hostname> for each hostname in etc/hosts
+
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress
+  namespace: my-namespace
 spec:
   rules:
   # Have to add this to /etc/hosts to direct traffic in browser to this ingress
