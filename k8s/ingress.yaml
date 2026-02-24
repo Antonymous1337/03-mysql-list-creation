@@ -1,5 +1,10 @@
 # minikube addons enable ingress
-# need to add <minikube ip> <hostname> for each hostname in etc/hosts
+# NOT WINDOWS:
+#   - need to add <minikube ip> <hostname> for each hostname in etc/hosts
+# WINDOWS:
+#   - Instead of <minikube ip> do the ip of kubernetes cluster (e.g. 127.0.0.1)
+#   - kubectl port-forward -n ingress-nginx svc/ingress-nginx-controller 80:80
+#   - then go to local browser for phpmyadmin.local or app.local or any host you define here
 
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -36,10 +41,7 @@ spec:
             name: backend-service
             port:
               number: 3000 
-
-# TONIGHT
-# Deploy the template react application frontend in kubernetes, and make a backend call that updates db
-
+              
 # Monday NIGHT
 # External Secrets Operator
 

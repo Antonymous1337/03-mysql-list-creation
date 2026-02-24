@@ -35,7 +35,7 @@ connection.query(`
     console.log("Todos table ensured");
 });
 
-app.post("/add", (req, res) => {
+app.post("/api/add", (req, res) => {
     const { todoListTitle } = req.body;
 
     connection.query(

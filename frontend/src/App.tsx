@@ -11,7 +11,7 @@ function App() {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ todoListID: text })
+      body: JSON.stringify({ todoListTitle: text })
     });
 
     setText(""); // clear textbox
