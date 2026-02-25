@@ -1,6 +1,3 @@
-Tuesday NIGHT
-External Secrets Operator
-
 Wednesday NIGHT
 Grafana w/ the 1 basic call
 

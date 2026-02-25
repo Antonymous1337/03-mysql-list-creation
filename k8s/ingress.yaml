@@ -24,6 +24,16 @@ spec:
             name: phpmyadmin-service
             port:
               number: 80
+  - host: grafana.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: grafana-service
+            port:
+              number: 80
   - host: app.local
     http:
       paths:
@@ -41,27 +51,3 @@ spec:
             name: backend-service
             port:
               number: 3000 
-
-# Tuesday NIGHT
-# External Secrets Operator
-
-# Wednesday NIGHT
-# Grafana w/ the 1 basic call
-
-# Thursday NIGHT
-# Splunk w/ the 1 basic call
-
-# Friday NIGHT
-# Create Basic CRUD frontend w/ at minimum backend db 4 endpoints and w/ grafana and splunk graphs
-
-# Saturday NIGHT
-# Password, routing, authentication, authorization (users with login/signin)
-# Study the full application
-
-# Sunday NIGHT
-# Rewrite everything FROM SCRATCH
-
-# NEXT WEEK
-# k6s
-# PodDisruptionBudget
-# HorizontalPodAUtoScaler
