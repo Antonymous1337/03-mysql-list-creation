@@ -6,23 +6,17 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const connection = mysql.createConnection({
-    host: "mysql-service",
-    user: "root",
-    password: "rootpassword",
-    database: "appdb"
-})
-
-connection.connect(err => {
-    if (err) {
-        console.error("DB connection failed");
-        return;
-    }
-    console.log("Connected to MySQL");
-})
+const pool = mysql.createPool({
+  host: "mysql-service",
+  user: "root",
+  password: "rootpassword",
+  database: "appdb",
+  waitForConnections: true,
+  connectionLimit: 10
+});
 
 // create table if not exists
-connection.query(`
+pool.query(`
     CREATE TABLE IF NOT EXISTS todos (
         id INT AUTO_INCREMENT PRIMARY KEY,
         title VARCHAR(255)
@@ -38,7 +32,7 @@ connection.query(`
 app.post("/api/add", (req, res) => {
     const { todoListTitle } = req.body;
 
-    connection.query(
+    pool.query(
         "INSERT INTO todos (title) VALUES (?)",
         [todoListTitle],
         (err) => {
