@@ -1,3 +1,6 @@
+# username: admin
+# password: admin
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:

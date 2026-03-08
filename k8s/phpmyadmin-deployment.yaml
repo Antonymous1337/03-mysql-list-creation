@@ -1,3 +1,7 @@
+# username: root
+# password: rootpassword
+# CHANGES BASED ON THE SQL HOST USERNAME AND PASSWORD
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
