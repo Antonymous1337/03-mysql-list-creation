@@ -3,5 +3,7 @@ kind: ConfigMap
 metadata:
   name: mysql-config
   namespace: my-namespace
+  annotations:
+    argocd.argoproj.io/sync-wave: "-5"
 data:
   MYSQL_DATABASE: appdb

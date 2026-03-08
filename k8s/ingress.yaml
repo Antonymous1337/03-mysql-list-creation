@@ -11,6 +11,8 @@ kind: Ingress
 metadata:
   name: ingress
   namespace: my-namespace
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
 spec:
   rules:
   # Have to add this to /etc/hosts to direct traffic in browser to this ingress
