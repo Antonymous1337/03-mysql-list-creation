@@ -21,9 +21,7 @@ data:
           "id": 1,
           "type": "timeseries",
           "title": "Pods Ready by Deployment",
-          "datasource": {
-            "type": "prometheus"
-          },
+          "datasource": "Prometheus",
           "targets": [
             {
               "expr": "sum(kube_pod_status_ready{condition=\"true\"}) by (namespace, pod)",
@@ -35,9 +33,7 @@ data:
           "id": 2,
           "type": "timeseries",
           "title": "Available Replicas per Deployment",
-          "datasource": {
-            "type": "prometheus"
-          },
+          "datasource": "Prometheus",
           "targets": [
             {
               "expr": "kube_deployment_status_replicas_available",
@@ -63,9 +59,7 @@ data:
           "id": 1,
           "type": "timeseries",
           "title": "Backend HTTP Requests",
-          "datasource": {
-            "type": "prometheus"
-          },
+          "datasource": "Prometheus",
           "targets": [
             {
               "expr": "sum(rate(backend_http_requests_total[5m])) by (route, status)",
@@ -77,9 +71,7 @@ data:
           "id": 2,
           "type": "timeseries",
           "title": "Todo Inserts per Second",
-          "datasource": {
-            "type": "prometheus"
-          },
+          "datasource": "Prometheus",
           "targets": [
             {
               "expr": "rate(backend_todo_inserts_total[5m])",
