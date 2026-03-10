@@ -17,8 +17,8 @@ spec:
     repoURL: https://github.com/Antonymous1337/03-mysql-list-creation.git
     targetRevision: HEAD
     path: ./k8s-helm
-    directory:
-      recurse: true # Enable watching subdirectories
+    helm:
+      valueFiles: ['values.yaml']
   destination:
     server: https://kubernetes.default.svc
     namespace: my-namespace
