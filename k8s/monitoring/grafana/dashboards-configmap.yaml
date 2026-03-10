@@ -22,8 +22,7 @@ data:
           "type": "timeseries",
           "title": "Pods Ready by Deployment",
           "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
+            "type": "prometheus"
           },
           "targets": [
             {
@@ -37,8 +36,7 @@ data:
           "type": "timeseries",
           "title": "Available Replicas per Deployment",
           "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
+            "type": "prometheus"
           },
           "targets": [
             {
@@ -66,8 +64,7 @@ data:
           "type": "timeseries",
           "title": "Backend HTTP Requests",
           "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
+            "type": "prometheus"
           },
           "targets": [
             {
@@ -81,8 +78,7 @@ data:
           "type": "timeseries",
           "title": "Todo Inserts per Second",
           "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
+            "type": "prometheus"
           },
           "targets": [
             {
