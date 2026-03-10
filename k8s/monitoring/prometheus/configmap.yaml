@@ -12,7 +12,7 @@ data:
     - job_name: kube-state-metrics
       static_configs:
       - targets:
-        - kube-state-metrics:8080
+        - kube-state-metrics-service:8080
 
     - job_name: backend
       metrics_path: /metrics
