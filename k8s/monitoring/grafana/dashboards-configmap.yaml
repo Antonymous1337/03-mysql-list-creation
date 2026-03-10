@@ -2,7 +2,21 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: grafana-dashboards
+  namespace: my-namespace
 
 data:
   cluster-health.json: |
-    { ...dashboard json... }
+    {
+      "title": "Example Metrics",
+      "panels": [
+        {
+          "type": "graph",
+          "title": "Requests",
+          "targets": [
+            {
+              "expr": "rate(http_requests_total[5m])"
+            }
+          ]
+        }
+      ]
+    }
